@@ -6,6 +6,7 @@ function App() {
 
   return (
     <section className="mortgage_section">
+      <h1>Mortgage calculator </h1>
       <button
         className="primary_btn"
         onClick={() => {

@@ -4,6 +4,7 @@
   --brand-color-secondary: #62c422;
   --brand-color-background: rgba(98, 196, 34, 0.1);
   --text-color: #333;
+  font-size: 100%;
   --font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -22,11 +23,54 @@ body {
   height: 100vh;
   color: var(--text-color);
   font-family: var(--font-family);
+  font-size: clamp(
+    1rem,
+    /* minimum = user’s default */ 1vw + 1rem,
+    /* fluid scaling */ 1.125rem /* max ~1.125× user’s default */
+  );
+  line-height: 1.6;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fluid headings using clamp(min, preferred, max) */
+h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 3.5rem); /* ~32px–56px */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 2.5rem); /* ~24px–40px */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw + 0.5rem, 2rem); /* ~20px–32px */
+  font-weight: 500;
+}
+
+h4 {
+  font-size: clamp(1.125rem, 2vw + 0.5rem, 1.5rem);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+/* Optional: scale text in small viewports */
+@media (max-width: 400px) {
+  body {
+    font-size: 0.95rem;
+  }
+}
 .mortgage_section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 1rem;
 }
 
