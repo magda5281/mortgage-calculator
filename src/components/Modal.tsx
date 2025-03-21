@@ -55,7 +55,7 @@ export const Modal: React.FC<ModalProps> = ({
 
   return (
     <dialog ref={dialogRef} className={`modal ${className}`} onCancel={onClose}>
-      <div ref={modalRef}>
+      <div ref={modalRef} className="modal_content">
         <div className="modal_header">
           <h2>{title}</h2>
           <button className="close-button" onClick={onClose} aria-label="Close">
