@@ -16,7 +16,8 @@ function App() {
       <Modal
         isOpen={isOpenModal}
         onClose={() => setOpenModal(false)}
-        title="Mortgage calculator">
+        title="Mortgage calculator"
+        closeOnOutsideClick={true}>
         <div>Mortgage calculator form </div>
       </Modal>
     </section>
