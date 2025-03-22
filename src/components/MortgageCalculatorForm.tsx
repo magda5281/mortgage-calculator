@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { calculatorSchema } from '../schemas';
 import '../styles/form.css';
 import { Field } from './FormField';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { calculateMortgagePayment } from '../utils/mortgageUtils';
 import { MortgageData } from '../../types';
 
@@ -13,7 +13,7 @@ type FormData = z.infer<typeof calculatorSchema>;
 export const MortgageCalculatorForm = ({
   onCalculate,
 }: {
-  onCalculate: (result: any) => void;
+  onCalculate: (result: MortgageData) => void;
 }) => {
   const form = useForm<z.infer<typeof calculatorSchema>>({
     resolver: zodResolver(calculatorSchema),
@@ -49,9 +49,14 @@ export const MortgageCalculatorForm = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mortgage_form">
-      <Field label={'Deposit'} unit={'£'} error={errors?.deposit?.message}>
+      <Field
+        label={'Deposit'}
+        unit={'£'}
+        hint={'Less than Property value'}
+        error={errors?.deposit?.message}>
         <input
           type="number"
+          min={0}
           {...register('deposit', { valueAsNumber: true })}
         />
       </Field>
@@ -62,6 +67,7 @@ export const MortgageCalculatorForm = ({
         error={errors?.propertyValue?.message}>
         <input
           type="number"
+          min={0}
           {...register('propertyValue', { valueAsNumber: true })}
         />
       </Field>
@@ -72,6 +78,8 @@ export const MortgageCalculatorForm = ({
         error={errors?.interestRate?.message}>
         <input
           type="number"
+          min={0}
+          max={100}
           step="0.01"
           {...register('interestRate', { valueAsNumber: true })}
         />
@@ -82,6 +90,8 @@ export const MortgageCalculatorForm = ({
         unit={'years'}
         error={errors?.mortgageTerm?.message}>
         <input
+          min={0}
+          max={45}
           type="number"
           {...register('mortgageTerm', { valueAsNumber: true })}
         />

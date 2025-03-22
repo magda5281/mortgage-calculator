@@ -3,15 +3,7 @@ import dialogPolyfill from 'dialog-polyfill';
 import { X } from 'lucide-react';
 import '../styles/modal.css';
 import { useClickOutside } from '../hooks/useClickOutside';
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-  title: string;
-  className?: string;
-  closeOnOutsideClick?: boolean;
-}
+import { ModalProps } from '../../types';
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
@@ -27,8 +19,7 @@ export const Modal: React.FC<ModalProps> = ({
   useEffect(() => {
     const dialog = dialogRef.current;
 
-    // Apply the polyfill if showModal is not supported
-    //add support for older safari browsers
+    // Apply the polyfill if showModal is not supported like in older safari browsers
     const needsPolyfill = (dialog: HTMLDialogElement) => {
       return (
         dialog &&
@@ -54,7 +45,10 @@ export const Modal: React.FC<ModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <dialog ref={dialogRef} className={`modal ${className}`} onCancel={onClose}>
+    <dialog
+      ref={dialogRef}
+      className={`modal  ${className}`}
+      onCancel={onClose}>
       <div ref={modalRef} className="modal_content">
         <div className="modal_header">
           <h2>{title}</h2>

@@ -1,10 +1,18 @@
-export interface FormProps {
-  onCalculate: (
-    propertyValue: number,
-    deposit: number,
-    interestRate: number,
-    years: number,
-  ) => void;
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+  title: string;
+  className?: string;
+  closeOnOutsideClick?: boolean;
+}
+
+export interface FormFieldProps {
+  label: string;
+  unit?: string;
+  error?: string;
+  hint?: string;
+  children: React.ReactNode;
 }
 
 export type MortgagePayment = {
