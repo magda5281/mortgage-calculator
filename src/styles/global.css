@@ -75,7 +75,7 @@ input {
 input:focus {
   border-color: var(--brand-color-secondary);
 }
-/* Optional: scale text in small viewports */
+/* Scale text in small viewports */
 @media (max-width: 400px) {
   body {
     font-size: 0.95rem;
@@ -89,7 +89,7 @@ input:focus {
 }
 
 .primary_btn {
-  padding: 0.5rem;
+  padding: 0.5em;
   color: var(--brand-color-primary);
   border: none;
   border-radius: 10px;

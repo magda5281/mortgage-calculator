@@ -7,9 +7,10 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   border: none;
   position: fixed;
-  top: 10%;
-  left: 1rem;
+  top: 50%;
+  left: 50%;
   color: var(--brand-color-primary);
+  transform: translate(-50%, -50%);
 }
 
 .modal_content {
