@@ -14,8 +14,8 @@ describe('SimpleTable', () => {
   };
 
   it('does not render table when data is undefined', () => {
-    const { container } = render(<SimpleTable data={undefined} />);
-    expect(container.firstChild).toBeNull();
+    render(<SimpleTable data={undefined} />);
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
   });
 
   it('renders table headers', () => {

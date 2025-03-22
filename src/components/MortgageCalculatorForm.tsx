@@ -46,7 +46,7 @@ export const MortgageCalculatorForm = ({
 
   useEffect(() => {
     setFocus('deposit');
-  }, []);
+  }, [setFocus]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mortgage_form">

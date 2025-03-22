@@ -21,13 +21,13 @@ describe('Modal component', () => {
   });
 
   it('does not render the modal when isOpen is false', () => {
-    const { queryByRole } = render(
+    render(
       <Modal isOpen={false} onClose={jest.fn()} title="Hidden Modal">
         <div>Should not be visible</div>
       </Modal>,
     );
 
-    expect(queryByRole('dialog')).not.toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('calls onClose when close button is clicked', () => {
