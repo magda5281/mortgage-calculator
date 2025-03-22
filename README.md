@@ -1,62 +1,112 @@
-# Mortgage Repayment Calculator
+# 🏡 Mortgage Repayment Calculator
 
-A simple mortgage repayment calculator built with **React & TypeScript**.
+A simple, accessible, and responsive **Mortgage Repayment Calculator** built with **React**, **TypeScript**, **Vanilla CSS** and **Zod**.
+
+The calculator allows users to estimate their monthly mortgage repayments and view a detailed breakdown including interest, monthly totals, and remaining balance over time — all within a modal popup.
+
+---
 
 ## 🚀 Getting Started
 
-### 1️⃣ Install Dependencies
+These instructions will help you set up and run the project locally.
 
-Run the following command to install required dependencies:
+### ✅ Prerequisites
 
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- npm (comes with Node.js)
+
+---
+
+### 📦 Install dependencies
+
+```bash
 npm install
-
-## Available Scripts
-
-In the project directory, you can run:
-
-```sh
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 ```
 
-## ✨ Code Style & Linting ✨
+---
 
-This project follows a consistent coding style using **Prettier** and **ESLint**.
+### 💻 Start the development server
 
-### 📌 Run ESLint to Check for Code Issues
+```bash
+npm start
+```
 
-```sh
+This will start the app at [http://localhost:3000](http://localhost:3000) and reload on changes.
+
+---
+
+### 🧪 Run tests
+
+```bash
+npm test
+```
+
+Runs unit tests using **Jest** and **React Testing Library**.
+
+---
+
+### 🧹 Lint your code
+
+```bash
 npm run lint
 ```
+
+Uses **ESLint** and **Prettier** to enforce consistent code style and catch errors early.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/      # Reusable UI components
+├── styles/          # Global and modular CSS
+├── utils/           # Mortgage calculation logic
+├── tests/           # Unit and component tests
+└── App.tsx          # Main app component
+types.ts
+```
+
+---
+
+## ✨ Features
+
+- ✅ **Modal-based UI** – Opens in a popup window sized 500x500px on desktop
+- ✅ **Mobile-first responsive design**
+- ✅ **Fluid typography** for responsive design
+- ✅ **Accessible** form fields with labels and hints
+- ✅ **Strong TypeScript typing**
+- ✅ **Zod validation** with cross-field rules
+- ✅ **Reusable FormField and Modal component**
+- ✅ **Simple table with monthly breakdown**
+- ✅ **Tests using Jest + React Testing Library**
+- ✅ **Prettier & ESLint** for clean code
+
+---
+
+## 🛠 Built With
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Zod](https://zod.dev/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+
+---
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+Builds the app for production to the `/build` folder.
+
+---
+
+## 📄 License
+
+This project is for educational/demo purposes. No license currently applied.
