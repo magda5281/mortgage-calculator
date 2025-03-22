@@ -1,16 +1,13 @@
+import { FormFieldProps } from '../../types';
 import '../styles/form.css';
-interface FieldProps {
-  label: string;
-  unit?: string;
-  error?: string;
-  children: React.ReactNode;
-}
 
-export function Field({ label, unit, error, children }: FieldProps) {
+export function Field({ label, unit, error, hint, children }: FormFieldProps) {
   return (
     <div className="form_group">
       <div className="form_field">
-        <label className="field_label">{label}</label>
+        <label className="field_label">
+          {label} {hint && <span>({hint})</span>}
+        </label>
         <div className={`input_wrapper ${unit ? 'has-unit' : ''}`}>
           {unit && <span className="field_unit">{unit}</span>}
           {children}
