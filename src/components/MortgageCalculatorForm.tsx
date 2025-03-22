@@ -50,11 +50,13 @@ export const MortgageCalculatorForm = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mortgage_form">
       <Field
+        id={'deposit'}
         label={'Deposit'}
         unit={'£'}
         hint={'Less than Property value'}
         error={errors?.deposit?.message}>
         <input
+          id={'deposit'}
           type="number"
           min={0}
           {...register('deposit', { valueAsNumber: true })}
@@ -62,10 +64,12 @@ export const MortgageCalculatorForm = ({
       </Field>
 
       <Field
+        id={'propertyValue'}
         label={'Property value'}
         unit={'£'}
         error={errors?.propertyValue?.message}>
         <input
+          id={'propertyValue'}
           type="number"
           min={0}
           {...register('propertyValue', { valueAsNumber: true })}
@@ -73,10 +77,12 @@ export const MortgageCalculatorForm = ({
       </Field>
 
       <Field
+        id={'interestRate'}
         label={'Interest rate'}
         unit={'%'}
         error={errors?.interestRate?.message}>
         <input
+          id={'interestRate'}
           type="number"
           min={0}
           max={100}
@@ -86,10 +92,12 @@ export const MortgageCalculatorForm = ({
       </Field>
 
       <Field
+        id={'mortgageTerm'}
         label={'Mortgage term'}
         unit={'years'}
         error={errors?.mortgageTerm?.message}>
         <input
+          id={'mortgageTerm'}
           min={0}
           max={45}
           type="number"

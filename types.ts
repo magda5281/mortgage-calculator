@@ -12,7 +12,8 @@ export interface FormFieldProps {
   unit?: string;
   error?: string;
   hint?: string;
-  children: React.ReactNode;
+  children: React.ReactElement;
+  id: string;
 }
 
 export type MortgagePayment = {
