@@ -65,18 +65,19 @@ textarea {
 }
 
 input {
-  padding: 0.25em 0.75em;
+  padding: 0 0.5em;
   border: 1px solid var(--border-primary);
   border-radius: 6px;
   outline: none;
   transition: border 0.2s;
+  width: 100%;
 }
 
 input:focus {
   border-color: var(--brand-color-secondary);
 }
 /* Scale text in small viewports */
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   body {
     font-size: 0.95rem;
   }

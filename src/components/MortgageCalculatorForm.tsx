@@ -78,8 +78,8 @@ export const MortgageCalculatorForm = ({
       </Field>
 
       <Field
-        label={'Mortgage term(years)'}
-        unit={'%'}
+        label={'Mortgage term'}
+        unit={'years'}
         error={errors?.mortgageTerm?.message}>
         <input
           type="number"

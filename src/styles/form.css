@@ -2,10 +2,14 @@
   display: flex;
   flex-direction: column;
 }
+
 .form_field {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+.form_group:last-of-type {
+  margin-bottom: 0.5rem;
 }
 
 .field_label {
@@ -17,9 +21,38 @@
   white-space: nowrap;
 }
 
+.input_wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f8faff;
+  width: 100%;
+}
+.input_wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Unit box inside the input wrapper */
 .field_unit {
-  font-weight: normal;
-  opacity: 0.8;
+  padding: 0.2em 0.75em;
+  background-color: #fff;
+  font-weight: 500;
+  color: #333;
+  border-right: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* If the unit should be on the right (optional) */
+.input_wrapper.unit-right .field_unit {
+  border-right: none;
+  border-left: 1px solid #ccc;
 }
 
 .field_error {
@@ -28,6 +61,7 @@
   margin: 0;
   min-height: 1rem;
   transition: color 0.2s;
+  font-style: italic;
 }
 
 /* On tablets and up */
@@ -35,5 +69,8 @@
   .form_field {
     flex-direction: row;
     align-items: center; /* Optional: vertically align items in row layout */
+  }
+  .field_error {
+    text-align: end;
   }
 }
