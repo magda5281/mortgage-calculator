@@ -29,8 +29,8 @@ describe('SimpleTable', () => {
   it('renders correct number of payment rows', () => {
     render(<SimpleTable data={mockData} />);
     const rows = screen.getAllByRole('row');
-    // 1 header + 2 body + 1 footer
-    expect(rows.length).toBe(4);
+    // 1 header + 2 body + 2 footer
+    expect(rows.length).toBe(5);
   });
 
   it('renders formatted payment data', () => {
