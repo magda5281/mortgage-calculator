@@ -4,18 +4,14 @@ import { MortgageCalculatorForm } from './components/MortgageCalculatorForm';
 import { SimpleTable } from './components/Table';
 
 import { type MortgageData } from '../types';
-const data: MortgageData[] = [
-  { month: 1, interest: 400, total: 1000, balance: 240000 },
-  { month: 2, interest: 398, total: 1000, balance: 239000 },
-  /* ... */
-];
+
 function App() {
   const [isOpenModal, setOpenModal] = useState<boolean>(false);
-  const [mortgageData, setMortgageData] = useState(null);
+  const [mortgageData, setMortgageData] = useState<MortgageData>();
 
   return (
     <section className="mortgage_section">
-      <h1>Mortgage calculator </h1>
+      <h1>Mortgage page </h1>
       {!isOpenModal ? (
         <button
           className="primary_btn"
@@ -33,11 +29,10 @@ function App() {
         closeOnOutsideClick={false}>
         <MortgageCalculatorForm
           onCalculate={(result) => {
-            console.log('Mortgage result:', result);
             setMortgageData(result);
-            // You can show result inside modal or below button depending on flow
           }}
         />
+        <SimpleTable data={mortgageData} />
       </Modal>
     </section>
   );

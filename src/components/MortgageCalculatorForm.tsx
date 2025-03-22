@@ -6,6 +6,7 @@ import '../styles/form.css';
 import { Field } from './FormField';
 import { useEffect, useRef } from 'react';
 import { calculateMortgagePayment } from '../utils/mortgageUtils';
+import { MortgageData } from '../../types';
 
 type FormData = z.infer<typeof calculatorSchema>;
 
@@ -18,8 +19,8 @@ export const MortgageCalculatorForm = ({
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
       deposit: 25000,
-      propertyValue: 25000000,
-      interestRate: 4.5,
+      propertyValue: 250000,
+      interestRate: 5,
       mortgageTerm: 25,
     },
   });
@@ -31,20 +32,15 @@ export const MortgageCalculatorForm = ({
     formState: { errors },
   } = form;
 
-  //TODO: onSubmit functionality
   const onSubmit = (data: FormData) => {
-    const { loan, monthlyPayment, totalRepayment } = calculateMortgagePayment(
+    const mortgage: MortgageData = calculateMortgagePayment(
       data.propertyValue,
       data.deposit ?? 0,
       data.interestRate,
       data.mortgageTerm,
     );
 
-    onCalculate({
-      monthlyPayment: monthlyPayment.toFixed(2),
-      totalRepayment: totalRepayment.toFixed(2),
-      loan,
-    });
+    onCalculate(mortgage);
   };
 
   useEffect(() => {
