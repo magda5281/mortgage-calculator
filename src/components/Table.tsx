@@ -24,12 +24,13 @@ export function SimpleTable({ data }: { data?: MortgageData }) {
         </tbody>
         <tfoot>
           <tr>
-            <td>
-              <strong>Totals</strong>
-            </td>
-            <td></td>
-            <td>{totalPaidWithInterest.toFixed(2)}</td>
-            <td>{totalPaid.toFixed(2)}</td>
+            <td colSpan={2}>Total with interest</td>
+            <td colSpan={2}>Total without interest</td>
+          </tr>
+
+          <tr>
+            <td colSpan={2}>{totalPaidWithInterest.toFixed(2)}</td>
+            <td colSpan={2}>{totalPaid.toFixed(2)}</td>
           </tr>
         </tfoot>
       </table>

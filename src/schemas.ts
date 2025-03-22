@@ -16,7 +16,7 @@ export const calculatorSchema = z
 
     mortgageTerm: z
       .number({ invalid_type_error: 'Mortgage term must be a number' })
-      .int('Mortgage term must be an integer')
+      .int('Please enter full years only')
       .min(0, 'Minimum loan term is 0 years')
       .max(45, 'Maximum loan term is 45 years'),
   })
@@ -25,15 +25,8 @@ export const calculatorSchema = z
       // 1) Attach error to the `deposit` field:
       ctx.addIssue({
         path: ['deposit'],
-        message: 'Deposit must be less than the Property Value',
+        message: 'Deposit must be less than the Property value',
         code: 'custom',
       });
-
-      // 2) Attach a second error to the `propertyValue` field:
-      // ctx.addIssue({
-      //   path: ['propertyValue'],
-      //   message: 'Property Value must be greater than Deposit',
-      //   code: 'custom',
-      // });
     }
   });
