@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Field } from './FormField';
+import { Field } from '../components/FormField';
 import '@testing-library/jest-dom';
 
 describe('Field', () => {

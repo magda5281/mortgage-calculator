@@ -14,9 +14,11 @@ export const calculateMortgagePayment = (
 
   // Monthly Repayment Formula
   const monthlyPayment =
-    (monthlyInterestRate /
-      (1 - Math.pow(1 + monthlyInterestRate, -totalMonths))) *
-    loan;
+    monthlyInterestRate === 0
+      ? loan / totalMonths
+      : (monthlyInterestRate /
+          (1 - Math.pow(1 + monthlyInterestRate, -totalMonths))) *
+        loan;
 
   let balance = loan;
   const monthlyPayments = [];
