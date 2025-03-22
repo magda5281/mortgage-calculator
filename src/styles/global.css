@@ -76,6 +76,12 @@ input {
 input:focus {
   border-color: var(--brand-color-secondary);
 }
+
+input:invalid {
+  color: red;
+  outline: none;
+}
+
 /* Scale text in small viewports */
 @media (max-width: 450px) {
   body {

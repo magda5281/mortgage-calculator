@@ -16,6 +16,7 @@ export const MortgageCalculatorForm = ({
   onCalculate: (result: MortgageData) => void;
 }) => {
   const form = useForm<z.infer<typeof calculatorSchema>>({
+    mode: 'onBlur',
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
       deposit: 25000,
@@ -57,7 +58,7 @@ export const MortgageCalculatorForm = ({
         error={errors?.deposit?.message}>
         <input
           id={'deposit'}
-          type="number"
+          type={'number'}
           min={0}
           {...register('deposit', { valueAsNumber: true })}
         />
@@ -70,7 +71,7 @@ export const MortgageCalculatorForm = ({
         error={errors?.propertyValue?.message}>
         <input
           id={'propertyValue'}
-          type="number"
+          type={'number'}
           min={0}
           {...register('propertyValue', { valueAsNumber: true })}
         />
@@ -83,10 +84,10 @@ export const MortgageCalculatorForm = ({
         error={errors?.interestRate?.message}>
         <input
           id={'interestRate'}
-          type="number"
+          type={'number'}
           min={0}
           max={100}
-          step="0.01"
+          step={'0.01'}
           {...register('interestRate', { valueAsNumber: true })}
         />
       </Field>
@@ -95,17 +96,21 @@ export const MortgageCalculatorForm = ({
         id={'mortgageTerm'}
         label={'Mortgage term'}
         unit={'years'}
+        hint={'Enter full years 1 to 45'}
         error={errors?.mortgageTerm?.message}>
         <input
           id={'mortgageTerm'}
+          step={1}
+          inputMode={'numeric'}
           min={0}
           max={45}
           type="number"
+          pattern="^\d+$"
           {...register('mortgageTerm', { valueAsNumber: true })}
         />
       </Field>
 
-      <button className={'primary_btn'} type="submit">
+      <button className={'primary_btn'} type={'submit'}>
         Calculate
       </button>
     </form>
