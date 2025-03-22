@@ -21,17 +21,17 @@
   top: 0;
   z-index: 1;
   background-color: var(--brand-color-secondary);
-  text-align: start;
-  padding: 8px;
   text-transform: capitalize;
   color: var(--text-color);
 }
 .custom-table thead th {
   padding: 8px;
   text-transform: capitalize;
+  text-align: start;
 }
 
-.custom-table tbody td {
+.custom-table tbody td,
+.custom-table tfoot td {
   padding: 8px;
   text-align: start;
 }
@@ -50,4 +50,9 @@
 }
 .custom-table tbody tr:nth-child(even) {
   background-color: var(--brand-color-background);
+}
+
+.custom-table tfoot {
+  color: var(--text-color);
+  font-weight: 600;
 }
