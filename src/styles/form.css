@@ -33,12 +33,18 @@
   border-radius: 6px;
   overflow: hidden;
   background-color: #f8faff;
+  transition: box-shadow 0.2s ease;
 }
 .input_wrapper input {
   flex: 1;
   border: none;
   outline: none;
   background: transparent;
+}
+
+.input_wrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--brand-color-secondary);
+  border-color: var(--brand-color-secondary);
 }
 
 /* Unit box inside the input wrapper */
