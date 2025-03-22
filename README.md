@@ -60,9 +60,10 @@ Uses **ESLint** and **Prettier** to enforce consistent code style and catch erro
 ```
 src/
 ├── components/      # Reusable UI components
+├── hooks/           # Reusable hooks
 ├── styles/          # Global and modular CSS
-├── utils/           # Mortgage calculation logic
 ├── tests/           # Unit and component tests
+├── utils/           # Mortgage calculation logic
 └── App.tsx          # Main app component
 types.ts
 ```
@@ -106,6 +107,10 @@ npm run build
 Builds the app for production to the `/build` folder.
 
 ---
+
+## 📝 Developer Notes
+
+For implementation details, design decisions, or technical reasoning behind certain components (e.g., the modal), please refer to [NOTES.md](./NOTES.md).
 
 ## 📄 License
 
