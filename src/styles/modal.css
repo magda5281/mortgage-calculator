@@ -20,7 +20,7 @@
 }
 
 dialog::backdrop {
-  background-color: var(--brand-color-background);
+  background-color: var(--brand-color-background-opacity);
   backdrop-filter: blur(2px);
 }
 
