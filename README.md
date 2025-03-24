@@ -1,5 +1,7 @@
 # 🏡 Mortgage Repayment Calculator
 
+🚀 **Live Demo**: [https://mortgage-calculator-lemon-sigma.vercel.app](https://mortgage-calculator-lemon-sigma.vercel.app)
+
 A simple, accessible, and responsive **Mortgage Repayment Calculator** built with **React**, **TypeScript**, **Vanilla CSS** and **Zod**.
 
 The calculator allows users to estimate their monthly mortgage repayments and view a detailed breakdown including interest, monthly totals, and remaining balance over time — all within a modal popup.
