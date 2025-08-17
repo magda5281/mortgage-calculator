@@ -1,3 +1,33 @@
+/**
+ * Calculates a mortgage repayment schedule (amortization table) based on input parameters.
+ *
+ * @param {number} propertyValue - The total value of the property (must be > deposit).
+ * @param {number} deposit - The initial deposit paid (must be >= 0 and < propertyValue).
+ * @param {number} interestRate - Annual interest rate (0-100%, e.g., 5 for 5%).
+ * @param {number} mortgageTermYears - Loan term in years (1-45, integer).
+ *
+ * @returns {Object} An object containing:
+ *   @property {Array} payments - Monthly payment details (array of objects).
+ *     @property {number} month - Month number (1 to term*12).
+ *     @property {number} interest - Interest portion of payment.
+ *     @property {number} total - Total payment (principal + interest).
+ *     @property {number} balance - Remaining loan balance.
+ *   @property {number} totalPaid - Total principal paid (equals loan amount).
+ *   @property {number} totalPaidWithInterest - Total cost including interest.
+ *
+ * @throws {Error} If inputs are invalid (handled by Zod schema in parent function).
+ *
+ * @example
+ * // Returns 25-year mortgage schedule for £200k property
+ * const result = calculateMortgagePayment(200000, 50000, 3.5, 25);
+ * console.log(result.payments[0]); // First payment details
+ *
+ * @notes
+ * - Uses standard annuity formula for amortization.
+ * - Handles 0% interest edge case (equal principal payments).
+ * - Balances are rounded to 2 decimal places for currency.
+ */
+
 export const calculateMortgagePayment = (
   propertyValue: number,
   deposit: number,

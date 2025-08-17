@@ -66,7 +66,8 @@ src/
 ├── styles/          # Global and modular CSS
 ├── tests/           # Unit and component tests
 ├── utils/           # Mortgage calculation logic
-└── App.tsx          # Main app component
+├──App.tsx           # Main app component
+└── schemas.ts
 types.ts
 ```
 

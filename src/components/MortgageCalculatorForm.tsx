@@ -6,7 +6,7 @@ import '../styles/form.css';
 import { Field } from './FormField';
 import { useEffect } from 'react';
 import { calculateMortgagePayment } from '../utils/mortgageUtils';
-import { MortgageData } from '../../types';
+import { type MortgageData } from '../../types';
 
 type FormData = z.infer<typeof calculatorSchema>;
 
@@ -100,12 +100,12 @@ export const MortgageCalculatorForm = ({
         error={errors?.mortgageTerm?.message}>
         <input
           id={'mortgageTerm'}
-          step={1}
+          step={1} //(but not all—e.g., Firefox allows manual decimal entry)
           inputMode={'numeric'}
           min={0}
           max={45}
           type="number"
-          pattern="^\d+$"
+          // pattern="^\d+$" redundant as it is fro text input
           {...register('mortgageTerm', { valueAsNumber: true })}
         />
       </Field>

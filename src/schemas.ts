@@ -30,3 +30,5 @@ export const calculatorSchema = z
       });
     }
   });
+
+// instead of using superRefine, you can use refine

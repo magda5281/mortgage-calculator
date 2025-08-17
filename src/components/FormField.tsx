@@ -1,5 +1,4 @@
-import React from 'react';
-import { FormFieldProps } from '../../types';
+import { type FormFieldProps } from '../../types';
 import '../styles/form.css';
 
 export function Field({

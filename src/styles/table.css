@@ -3,11 +3,30 @@
   max-width: 500px;
   max-height: 300px;
   overflow: auto;
-  border: 1px solid var(--brand-color-primary);
-  border-radius: 10px;
-  scrollbar-gutter: stable both-edges;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-color-primary) transparent;
+  scroll-padding: 30px;
+  /* border: 1px solid var(--brand-color-primary);
+  border-radius: 10px; */
+  scrollbar-gutter: unset;
+}
+.table-container::-webkit-scrollbar {
+  width: 12px; /* width of vertical scrollbar */
+  height: 12px; /* height of horizontal scrollbar */
 }
 
+.table-container::-webkit-scrollbar-track {
+  background: transparent; /* don’t hide the rounded corners */
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: var(--brand-color-primary);
+  border-radius: 10px;
+  border: 3px solid transparent; /* creates spacing so corners show */
+  background-clip: content-box;
+}
 .custom-table {
   width: 100%;
   border-collapse: separate;
@@ -16,13 +35,14 @@
   white-space: nowrap;
 }
 
-.custom-table thead {
+thead {
   position: sticky;
   top: 0;
   z-index: 1;
   background-color: var(--brand-color-secondary);
   text-transform: capitalize;
   color: var(--text-color);
+  z-index: 1;
 }
 .custom-table thead th {
   padding: 8px;

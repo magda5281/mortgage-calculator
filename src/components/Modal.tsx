@@ -3,7 +3,7 @@ import dialogPolyfill from 'dialog-polyfill';
 import { X } from 'lucide-react';
 import '../styles/modal.css';
 import { useClickOutside } from '../hooks/useClickOutside';
-import { ModalProps } from '../../types';
+import { type ModalProps } from '../../types';
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
